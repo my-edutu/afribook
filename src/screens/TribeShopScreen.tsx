@@ -10,11 +10,7 @@ import {
   Bell, 
   Filter, 
   Box, 
-  ShoppingBag, 
-  Smartphone, 
-  Cpu, 
-  ChevronRight,
-  Bot
+  ShoppingBag
 } from 'lucide-react';
 import { Screen } from '../types';
 
@@ -27,9 +23,9 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
     {
       id: 1,
       title: 'Neural Link Pro Headphones',
-      desc: 'Experience hyper-focused sound engineered for deep work sessions.',
-      price: '12,450 AFR',
-      tag: "Editor's Choice",
+      desc: 'Hyper-focused sound for deep work.',
+      price: '₦245,000',
+      tag: "Best Seller",
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6rxH8nemEjHoButoPj0u7G9bEP5Lx_ShHuerp2lhZYtHwRMafucYgCavPWT1f6vQqjLap-TzOxEKLDkgkDmztjtIhGCIz7fvHvNWzhOJGs8fY-RmbhVzFK_rufmOX9V0mAkHPy1r1_9pVHU16b3npoD6aFSjSFfschpBiQjI-eM_-OcTX8sDFMsvf_Wkc7cbiuS0AhR1lQUKk0z1vGG2eEGftONjvX8Pwa13JkhY1GHRL91cQbZSWetIYqchHdYfAxBlmtTtVK5o',
       featured: true
     },
@@ -37,28 +33,28 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
       id: 2,
       title: 'Founders Watch v2',
       desc: 'Track productivity & vitals.',
-      price: '8,200 AFR',
+      price: '₦185,000',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAVCz7_YCt2K3dmAioX760cuvvGHuXKkDnuov34jHm-Fb_kbBRYn9bjwudUZSd1iGDfd7jN50AdDBYaYq6AzxoifhOYkIqzoCRJQDrlhUxAXAhLLPRPetei7wL4ppc7bt6j-cuGjN8t4_IFbInVkwmVoh-TuAYKxgjvZUpXwUJo4qr2iSqEtebiedUl36ljSNP4h82xAwUAYLcusn9yXwLcBrQMLOe2rcbSMIL-i9qhtTuG0omuv4AWLLLg_31KV92ZeO0ElHnS1MI'
     },
     {
       id: 3,
       title: 'Matrix Keyboard',
-      desc: 'Haptic response optimized for code.',
-      price: '4,500 AFR',
+      desc: 'Optimized for heavy code sessions.',
+      price: '₦95,000',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-gMUvwX7NF2bQJWiB9QFDqVp0T30ZdGLXOrPSpWubFvyZZXJL3F85QPgLCPzhcKA9Qd-SiFHc2o_-9_hjLlQUwyHLeVQYq5YgTUF2T1pIC_WBol2sFwRgio4dIJT-dXrspUmfHbJ4O_ql9MIwQuJ67RHr3Z_tjB9WLRRxXbEEI_L6Rw9WDx6NE63eDlzWwE0oHE3rgVBXNbFi3PQGWhZUrHoLif6-N3gbcB2vzjpa54G9qPFHecBBEUsW4TshvfurayXE_ui_FRo'
     },
     {
       id: 4,
       title: 'AfriPad Pro 13"',
-      desc: 'The ultimate tablet for designers.',
-      price: '32,000 AFR',
+      desc: 'The ultimate canvas for creators.',
+      price: '₦850,000',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCvsrBIoC0e2yL__PHQA-q0cj2RVXlp8iYZw7J1MWv4v3sY-DyRv2Rf5yquNJPJFlzECLatxKduIJfiZJUDwWL2ntpGfmTiJXZhvTUtqzBVpsqIwu1Vu1Shl0xPoCVM9S0toHdPcaASV7y4-_SLqAVU1IV2N052L6DM2V2UgK9cTbDuEXxBcstaNDGtKTQMFgQ4qdyloTBkQbZdpuIM4NugDr2zSQkVVOX4rmWKQzAPWyrglNBwEBlAnnEr8-ZvYuDfKejraUM2fL0'
     },
     {
       id: 5,
       title: 'Founder Tee',
-      desc: 'Heavyweight organic cotton.',
-      price: '1,200 AFR',
+      desc: 'Quality organic cotton wear.',
+      price: '₦45,000',
       img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCrnwPS8g3qIM-N9uqpxOJ23O6GLFmuuqt2e0vxEmUJSEyZTNWjEhYln5Izq6_IoR2n1fQg1ZGrlVjRiYn3FgDYJ-ynBbslbFXG3CqO5y5oc1-wmdla3wqcps2iy3S_BisYu_hlcTadUn_cfJNPsGtAabnl0wjmwL8DxUozNOyGX3XY2t8WGWHOp9k7LWpiG-7T6DsSadaSqjVAA21P17fdEeepqsx-ZwgQOod86pOVYTePQYUefTKsxy6h01RmvFqwV8BxxsdnNgU'
     }
   ];
@@ -123,52 +119,52 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
         </section>
 
         {/* Catalog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-20">
           {shopItems.map((item) => (
             <div 
               key={item.id}
               onClick={() => onNavigate('showroom-ai')}
-              className={`${item.featured ? 'md:col-span-2 md:row-span-2' : ''} group bg-white rounded-[2.5rem] overflow-hidden flex flex-col transition-all hover:shadow-2xl hover:shadow-stone-200 border border-stone-100 cursor-pointer active:scale-[0.99]`}
+              className={`${item.featured ? 'col-span-2 row-span-1 md:row-span-2' : 'col-span-1'} group bg-white rounded-3xl md:rounded-[2.5rem] overflow-hidden flex flex-col transition-all hover:shadow-xl border border-stone-100 cursor-pointer active:scale-[0.99]`}
             >
-              <div className={`relative ${item.featured ? 'h-[400px]' : 'h-48'} overflow-hidden`}>
+              <div className={`relative ${item.featured ? 'h-56 md:h-[400px]' : 'h-32 md:h-48'} overflow-hidden`}>
                 <img 
                   src={item.img} 
                   alt={item.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 {item.tag && (
-                  <div className="absolute top-6 left-6 flex flex-col gap-2">
-                    <span className="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">
+                  <div className="absolute top-4 left-4 md:top-6 md:left-6 flex flex-col gap-2">
+                    <span className="bg-primary text-white px-3 py-1 md:px-4 md:py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest">
                       {item.tag}
                     </span>
                   </div>
                 )}
                 {!item.featured && (
-                  <button className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md p-2 rounded-xl text-primary shadow-sm hover:scale-110 transition-transform">
-                    <Box size={20} />
+                  <button className="absolute bottom-2 right-2 md:bottom-4 md:right-4 bg-white/90 backdrop-blur-md p-1.5 md:p-2 rounded-lg md:rounded-xl text-primary shadow-sm hover:scale-110 transition-transform">
+                    <Box size={16} className="md:w-5 md:h-5" />
                   </button>
                 )}
               </div>
-              <div className="p-8 flex flex-col justify-between flex-grow">
+              <div className="p-4 md:p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <h3 className={`${item.featured ? 'text-2xl' : 'text-lg'} font-black uppercase tracking-tight mb-2`}>
+                  <h3 className={`${item.featured ? 'text-lg md:text-2xl' : 'text-sm md:text-lg'} font-black uppercase tracking-tight mb-1 md:mb-2`}>
                     {item.title}
                   </h3>
-                  <p className="text-stone-500 text-sm font-medium mb-6">{item.desc}</p>
+                  <p className="text-stone-500 text-[10px] md:text-sm font-medium mb-3 md:mb-6 line-clamp-1 md:line-clamp-none">{item.desc}</p>
                 </div>
                 <div className="flex justify-between items-center mt-auto">
                   <div className="flex flex-col">
-                    <span className="text-[10px] text-stone-400 uppercase font-black tracking-widest">Price</span>
-                    <span className={`${item.featured ? 'text-2xl' : 'text-lg'} font-black text-primary`}>{item.price}</span>
+                    <span className="text-[8px] md:text-[10px] text-stone-400 uppercase font-black tracking-widest leading-none mb-1">Price</span>
+                    <span className={`${item.featured ? 'text-base md:text-2xl' : 'text-sm md:text-lg'} font-black text-primary`}>{item.price}</span>
                   </div>
-                  <button className={`${item.featured ? 'px-6 py-4 rounded-2xl' : 'size-12 rounded-full'} bg-stone-900 text-white flex items-center justify-center gap-3 font-black text-xs uppercase tracking-widest hover:bg-primary transition-colors active:scale-95 overflow-hidden`}>
+                  <button className={`${item.featured ? 'px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl' : 'size-8 md:size-12 rounded-lg md:rounded-full'} bg-stone-900 text-white flex items-center justify-center gap-2 md:gap-3 font-black text-[8px] md:text-xs uppercase tracking-widest hover:bg-primary transition-colors active:scale-95 overflow-hidden`}>
                     {item.featured ? (
                       <>
-                        <ShoppingCart size={20} />
-                        Add to Cart
+                        <ShoppingCart size={14} className="md:w-5 md:h-5" />
+                        <span className="text-[10px] md:text-xs">Add</span>
                       </>
                     ) : (
-                      <ShoppingBag size={20} />
+                      <ShoppingBag size={14} className="md:w-5 md:h-5" />
                     )}
                   </button>
                 </div>
@@ -179,38 +175,25 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
 
         {/* Collections */}
         <section className="mt-20">
-          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Curated Collections</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-xl md:text-3xl font-black uppercase tracking-tight mb-6 md:mb-8">Curated Collections</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             {collections.map((coll, i) => (
-              <div key={i} className="relative h-64 rounded-[3rem] overflow-hidden group cursor-pointer shadow-lg">
+              <div key={i} className="relative h-48 md:h-64 rounded-3xl md:rounded-[3rem] overflow-hidden group cursor-pointer shadow-lg">
                 <img 
                   src={coll.img} 
                   alt={coll.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
-                <div className="absolute bottom-8 left-8 text-white">
-                  <h4 className="text-2xl font-black uppercase tracking-tight">{coll.title}</h4>
-                  <p className="text-white/70 text-[10px] font-black uppercase tracking-widest">{coll.sub}</p>
+                <div className="absolute bottom-4 left-6 md:bottom-8 md:left-8 text-white">
+                  <h4 className="text-lg md:text-2xl font-black uppercase tracking-tight">{coll.title}</h4>
+                  <p className="text-white/70 text-[8px] md:text-[10px] font-black uppercase tracking-widest">{coll.sub}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
       </main>
-
-      {/* AI Assistant FAB */}
-      <div className="fixed bottom-28 right-8 z-50">
-        <div className="bg-white shadow-2xl rounded-[2rem] p-4 flex items-center gap-4 border border-stone-100">
-          <div className="size-12 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-            <Bot size={28} />
-          </div>
-          <div>
-            <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest">AI Sales Assistant</p>
-            <p className="text-sm font-bold text-stone-900 tracking-tight">How can I help you build today?</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

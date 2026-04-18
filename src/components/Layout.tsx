@@ -46,45 +46,34 @@ export default function Layout({ children, activeScreen, onScreenChange }: Layou
 
   return (
     <div className="flex flex-col min-h-screen max-w-md mx-auto bg-background-light shadow-2xl relative overflow-hidden">
-      {/* Side Menu Drawer */}
+      {/* Compact Top-Right Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop */}
+            {/* Invisible backdrop for closing */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] max-w-md mx-auto"
+              className="fixed inset-0 z-[60] max-w-md mx-auto"
             />
-            {/* Drawer */}
+            {/* Dropdown Card */}
             <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 w-4/5 bg-white z-[70] shadow-2xl flex flex-col max-w-md"
+              initial={{ opacity: 0, scale: 0.9, y: -20, originX: '100%', originY: '0%' }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: -20 }}
+              transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+              className="absolute top-16 right-4 w-60 bg-white z-[70] rounded-3xl border border-slate-200 flex flex-col overflow-hidden"
             >
-              <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-                <h2 className="text-xl font-black text-primary uppercase tracking-tight">Menu</h2>
-                <button 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="p-2 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="flex-1 overflow-y-auto py-4 px-4 space-y-2">
+              <div className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
                 {[
-                  { id: 'profile', icon: User, label: 'My Profile' },
-                  { id: 'afripay', icon: Wallet, label: 'AfriPay Wallet' },
-                  { id: 'fundraiser', icon: Heart, label: 'Fundraisers' },
-                  { id: 'showroom-ai', icon: Sparkles, label: 'AI Showroom' },
-                  { id: 'settings', icon: Settings, label: 'Settings' },
-                  { id: 'governance', icon: Shield, label: 'Governance' },
-                  { id: 'help', icon: HelpCircle, label: 'Help Center' },
+                  { id: 'profile', icon: User, label: 'Profile', color: 'text-blue-500 bg-blue-50' },
+                  { id: 'afripay', icon: Wallet, label: 'AfriPay', color: 'text-emerald-500 bg-emerald-50' },
+                  { id: 'fundraiser', icon: Heart, label: 'Fund', color: 'text-rose-500 bg-rose-50' },
+                  { id: 'showroom-ai', icon: Sparkles, label: 'AI Studio', color: 'text-amber-500 bg-amber-50' },
+                  { id: 'settings', icon: Settings, label: 'Settings', color: 'text-slate-500 bg-slate-50' },
+                  { id: 'help', icon: HelpCircle, label: 'Support', color: 'text-indigo-500 bg-indigo-50' },
                 ].map((item) => (
                   <button
                     key={item.id}
@@ -92,23 +81,23 @@ export default function Layout({ children, activeScreen, onScreenChange }: Layou
                       onScreenChange(item.id as Screen);
                       setIsMenuOpen(false);
                     }}
-                    className="w-full flex items-center gap-4 p-4 rounded-2xl hover:bg-primary/5 transition-colors group"
+                    className="w-full flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-50 transition-colors group"
                   >
-                    <div className="size-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                      <item.icon size={22} />
+                    <div className={`size-8 rounded-lg flex items-center justify-center ${item.color} group-hover:scale-110 transition-transform`}>
+                      <item.icon size={18} />
                     </div>
-                    <span className="font-bold text-slate-700 uppercase tracking-tight text-sm">{item.label}</span>
+                    <span className="font-bold text-slate-700 uppercase tracking-tight text-[11px]">{item.label}</span>
                   </button>
                 ))}
-              </div>
-
-              <div className="p-6 border-t border-slate-100">
-                <button className="w-full flex items-center gap-4 p-4 rounded-2xl text-rose-500 hover:bg-rose-50 transition-colors">
-                  <div className="size-10 rounded-xl bg-rose-50 flex items-center justify-center">
-                    <LogOut size={22} />
-                  </div>
-                  <span className="font-bold uppercase tracking-tight text-sm">Logout</span>
-                </button>
+                
+                <div className="pt-2 border-t border-slate-100">
+                  <button className="w-full flex items-center gap-3 p-3 rounded-2xl text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition-all group">
+                    <div className="size-8 rounded-lg bg-slate-50 group-hover:bg-rose-100 group-hover:text-rose-500 flex items-center justify-center transition-colors">
+                      <LogOut size={18} />
+                    </div>
+                    <span className="font-bold uppercase tracking-tight text-[11px]">Logout</span>
+                  </button>
+                </div>
               </div>
             </motion.div>
           </>
