@@ -10,6 +10,8 @@ export type Screen =
   | 'discover' 
   | 'afripay' 
   | 'profile'
+  | 'settings'
+  | 'help'
   | 'tribe-detail'
   | 'governance'
   | 'showroom'

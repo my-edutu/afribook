@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { 
-  Search, 
   MapPin, 
   Sparkles, 
   Coins, 
@@ -22,8 +21,6 @@ import {
 import InteractiveMap from '../components/InteractiveMap';
 
 export default function DiscoverScreen() {
-  const trendingTags = ['#Afrobeats', '#TechSummit2024', '#NairobiArt', '#LagosFashionWeek'];
-
   const tribeCards = [
     { title: 'Digital Griots', sub: '12.4k Storytellers', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC05GEfdbcZGyvIoR36eeertC_fmfmQ0zRtAoh8XU6y2-1WM-G2bNFM0K50US3yP5LzT0EXwaxzdpeg13al7iKocFZiBzgGTJ4pYIYc6cE2PRAMehTQvv5mh0ZFUX-QnI3soJ7s068j2SxWUUOKBBXJUjl_tH2Jgq4BhIhyi5DIk_xuri-DUbr4thZo6BxPnpHvfegMKof-2DTByUy9xVzONv2YJFPDET5u02lUaP_PFx4kRs_A5wnMizeDABhCR9i-6V66q9pFhuo' },
     { title: 'Tech Hub Lagos', sub: '8.9k Innovators', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALhD0dYn6g_JpGb3QOB9Apt9cOKP1dBijl57wQa2FdXypNd4FvvPASGhhRNSKVb1JBnA4EKnvZCdOxft_8DUDhkEhB7Pyf0XYHbC-uqDX6p2AmeDx0s9bSWXWKZE0u3ZiOhiNGGoZXnLL1EXKap8WYWJsoSegwmXx30nsaX4uH1K_gO07Tx80vpuKLV2j7PvXx_F0z882lQX03Du8hCKycov18j8yc7aTapbllE6BTiDQEey2IfXnGYKyykYjOIGW9YFZlZohb1-A' },
@@ -38,83 +35,90 @@ export default function DiscoverScreen() {
 
   return (
     <div className="flex flex-col pb-32 bg-background-light">
-      {/* Search & Trending Chips */}
-      <section className="sticky top-16 z-40 space-y-4 pt-4 px-4 bg-background-light/95 backdrop-blur-sm pb-4 border-b border-primary/5">
-        <div className="relative group">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-          <input 
-            className="w-full bg-slate-100 border-none rounded-full py-4 pl-12 pr-6 text-slate-900 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all placeholder:text-slate-400 font-medium shadow-sm" 
-            placeholder="Search tribes, music, and records..." 
-            type="text"
-          />
+      {/* AI Recommended Section - Now at the Top */}
+      <section className="px-4 pt-6 pb-4 space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-extrabold tracking-tight uppercase">AI Recommended</h2>
+          <span className="text-[10px] font-black text-secondary uppercase tracking-widest flex items-center gap-1 bg-secondary/10 px-3 py-1 rounded-full">
+            <Sparkles size={12} fill="currentColor" /> Verified Insights
+          </span>
         </div>
-        <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-1">
-          <span className="text-[10px] font-black uppercase tracking-widest text-primary shrink-0">Trending</span>
-          {trendingTags.map((tag, i) => (
-            <button 
-              key={i} 
-              className={`px-4 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
-                i === 0 ? 'bg-primary text-white shadow-md' : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-              }`}
-            >
-              {tag}
-            </button>
+        
+        <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+          {[
+            {
+              title: 'Burnaby Sound: Virtual World Tour',
+              tag: 'Live Event Hub',
+              img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAysc-8Mngpr7BDYIR3KJiMmeDMe-RDDbIV3rYwhItUsBMxkkiU-L3oNuBXH7t9TMYJ-jb6bXGEKRvv5xZR758PsJTyE04PJ-Skxbe2gfxuWSzJmqjXwu1Q_VecPM6O_r1v3Fg2lQtAeDQcS7dNyoMM_WzLjyJsx_m1VbHpnN7jUnxm9MF87a-k2wVh7OkNoXMvm9lp2oB7Wuhl_Ott7kulp-Ai0O6q9vIhvc16YBkHF0fx_fDqXxCPtc5GCZ88hJno_n57UTEAcU',
+              color: 'bg-slate-900'
+            },
+            {
+              title: 'Dakar Digital: 3D Art Expo',
+              tag: 'Virtual Gallery',
+              img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC05GEfdbcZGyvIoR36eeertC_fmfmQ0zRtAoh8XU6y2-1WM-G2bNFM0K50US3yP5LzT0EXwaxzdpeg13al7iKocFZiBzgGTJ4pYIYc6cE2PRAMehTQvv5mh0ZFUX-QnI3soJ7s068j2SxWUUOKBBXJUjl_tH2Jgq4BhIhyi5DIk_xuri-DUbr4thZo6BxPnpHvfegMKof-2DTByUy9xVzONv2YJFPDET5u02lUaP_PFx4kRs_A5wnMizeDABhCR9i-6V66q9pFhuo',
+              color: 'bg-secondary'
+            },
+            {
+              title: 'Nairobi VR: Meta-Clubbing',
+              tag: 'Immersive Nightlife',
+              img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDKTR_QADbB2LKxLxCldzFzsdMfREgAKfyP9x1Rhbqr_Zv2m12lFD5ixs7cVv-c7zSSulh0hWPiJfCbsnfhg3rCJZgaF_1J2tnvirrLJHyVSzdG5CTZrfvelDmdtZWgtmVT0u3KyO1588ZvJV-3-JZUUPuLdXlTxoREDC-ID4Slw1bVlpMPi70TU-62NoiNgM3vw-eQ2n1mGyXlhFKxECwT716em0BTD-3MR9uVUWQUxCypFdVh2LcwO2cOWnBYHRt0_YHJ4OBC49A',
+              color: 'bg-accent'
+            }
+          ].map((card, i) => (
+            <div key={i} className={`min-w-[300px] relative group overflow-hidden rounded-[2.5rem] ${card.color} h-52 border border-slate-200/10`}>
+              <img 
+                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" 
+                src={card.img} 
+                alt={card.title}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-8 right-8">
+                <span className="text-primary font-black text-[10px] uppercase tracking-widest mb-1.5 block">{card.tag}</span>
+                <h3 className="text-lg font-black text-white mb-2.5 leading-tight uppercase tracking-tight">{card.title}</h3>
+                <button className="bg-white text-slate-900 px-4 py-2 rounded-xl font-black text-[9px] uppercase tracking-widest hover:scale-105 transition-transform active:scale-95">
+                  Join Experience
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Interactive Map Section */}
-      <section className="px-4 py-6">
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-xl font-extrabold tracking-tight">Discover Africa</h2>
-          <span className="text-[10px] font-bold text-primary px-3 py-1 bg-primary/10 rounded-full uppercase tracking-widest">Live Connect</span>
-        </div>
-        <div className="relative w-full aspect-[4/5] bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-xl overflow-hidden">
-           <InteractiveMap />
+      {/* For Your Journey */}
+      <section className="px-4 py-6 space-y-4">
+        <h2 className="text-xl font-extrabold tracking-tight uppercase">For Your Journey</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-secondary p-6 rounded-[2.5rem] relative overflow-hidden text-white group border border-white/5">
+            <div className="relative z-10">
+              <Coins className="mb-2" size={32} />
+              <h4 className="text-lg font-black mb-1 uppercase tracking-tight">AfriPay Tips</h4>
+              <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-relaxed">Save 15% on tickets when using your local wallet today.</p>
+            </div>
+            <Coins className="absolute -right-4 -bottom-4 size-24 text-white/10 group-hover:rotate-12 transition-transform duration-500" />
+          </div>
+          <div className="bg-accent p-6 rounded-[2.5rem] flex flex-col justify-between group relative overflow-hidden text-white border border-white/5">
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="size-10 rounded-full bg-white/20 flex items-center justify-center">
+                  <FileText size={20} />
+                </div>
+                <span className="text-[8px] font-black uppercase tracking-widest">New Archive</span>
+              </div>
+              <h4 className="text-lg font-black leading-tight mt-4 uppercase tracking-tight">Songhai Empire Records</h4>
+              <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest mt-2">Explore fully verified digitized heritage.</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* AI Recommendations Panel */}
-      <section className="px-4 py-4 space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-extrabold tracking-tight">For Your Journey</h2>
-          <span className="text-[10px] font-black text-secondary uppercase tracking-widest flex items-center gap-1 bg-secondary/5 px-2 py-1 rounded-full">
-            <Sparkles size={12} fill="currentColor" /> AI Recommended
-          </span>
+      {/* Interactive Map Section */}
+      <section className="px-4 py-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-extrabold tracking-tight uppercase">Africa Pulse</h2>
+          <span className="text-[10px] font-black text-primary px-3 py-1 bg-primary/10 rounded-full uppercase tracking-widest">Live Connect</span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="md:col-span-2 relative group overflow-hidden rounded-3xl bg-slate-900 h-64 md:h-80 shadow-lg">
-            <img 
-              className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAysc-8Mngpr7BDYIR3KJiMmeDMe-RDDbIV3rYwhItUsBMxkkiU-L3oNuBXH7t9TMYJ-jb6bXGEKRvv5xZR758PsJTyE04PJ-Skxbe2gfxuWSzJmqjXwu1Q_VecPM6O_r1v3Fg2lQtAeDQcS7dNyoMM_WzLjyJsx_m1VbHpnN7jUnxm9MF87a-k2wVh7OkNoXMvm9lp2oB7Wuhl_Ott7kulp-Ai0O6q9vIhvc16YBkHF0fx_fDqXxCPtc5GCZ88hJno_n57UTEAcU" 
-              alt="Concert"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="text-primary font-bold text-[10px] uppercase tracking-widest mb-2 block">Live Event Hub</span>
-              <h3 className="text-2xl font-black text-white mb-3 leading-tight">Burnaby Sound: Interactive Virtual World Tour</h3>
-              <button className="bg-white text-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:scale-105 transition-transform active:scale-95 shadow-lg">Join Experience</button>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="bg-secondary p-6 rounded-3xl relative overflow-hidden text-white group shadow-lg">
-              <div className="relative z-10">
-                <Coins className="mb-2" size={32} />
-                <h4 className="text-lg font-bold mb-1">AfriPay Tips</h4>
-                <p className="text-white/80 text-xs font-medium">Save 15% on tickets when using your local wallet today.</p>
-              </div>
-              <Coins className="absolute -right-4 -bottom-4 size-24 text-white/10 group-hover:rotate-12 transition-transform duration-500" />
-            </div>
-            <div className="bg-accent p-6 rounded-3xl flex flex-col justify-between group shadow-lg">
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-white/20 flex items-center justify-center text-white">
-                  <FileText size={20} />
-                </div>
-                <span className="text-[10px] font-black text-white uppercase tracking-widest">New Archive Record</span>
-              </div>
-              <h4 className="text-lg font-extrabold text-white leading-tight mt-4">Explore the Songhai Empire Records</h4>
-            </div>
-          </div>
+        <div className="relative w-full aspect-[4/5] bg-slate-100 rounded-[3rem] overflow-hidden border border-slate-200">
+           <InteractiveMap />
         </div>
       </section>
 
@@ -127,7 +131,7 @@ export default function DiscoverScreen() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {tribeCards.map((tribe, i) => (
             <div key={i} className="flex flex-col items-center gap-3 group">
-              <div className="w-full aspect-square rounded-[2.5rem] overflow-hidden bg-slate-100 transition-all group-hover:-translate-y-2 group-hover:shadow-xl group-hover:shadow-primary/10">
+              <div className="w-full aspect-square rounded-[2.5rem] overflow-hidden bg-slate-100 transition-all group-hover:-translate-y-2 border border-slate-200">
                 <img className="w-full h-full object-cover" src={tribe.img} alt={tribe.title} />
               </div>
               <div className="text-center">
@@ -154,7 +158,7 @@ export default function DiscoverScreen() {
         </div>
         <div className="flex gap-6 overflow-x-auto no-scrollbar pb-6 px-4">
           {recordItems.map((record, i) => (
-            <div key={i} className="min-w-[300px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-sm group border border-slate-100">
+            <div key={i} className="min-w-[300px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden group border border-slate-100 transition-all">
               <div className="h-56 relative overflow-hidden">
                 <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src={record.img} alt={record.title} />
                 <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
@@ -166,7 +170,7 @@ export default function DiscoverScreen() {
                   <h4 className="text-lg font-black text-slate-900 leading-tight">{record.title}</h4>
                   <p className="text-slate-500 font-bold text-[11px] mt-1">{record.author}</p>
                 </div>
-                <button className="size-12 rounded-full bg-secondary text-white flex items-center justify-center shadow-lg shadow-secondary/20 hover:scale-110 active:scale-95 transition-all">
+                <button className="size-12 rounded-full bg-secondary text-white flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
                   <Play size={20} fill="currentColor" />
                 </button>
               </div>
@@ -175,13 +179,6 @@ export default function DiscoverScreen() {
         </div>
       </section>
 
-      {/* Floating AI Travel Guide Button */}
-      <div className="fixed bottom-24 right-4 z-30">
-        <button className="bg-primary text-white flex items-center gap-2 px-6 py-3 rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95 group">
-          <Sparkles size={20} className="group-hover:rotate-12 transition-transform" />
-          <span className="font-bold text-sm">AI Pulse Guide</span>
-        </button>
-      </div>
     </div>
   );
 }

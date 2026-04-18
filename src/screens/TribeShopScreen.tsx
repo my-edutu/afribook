@@ -80,7 +80,7 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
           >
             <ArrowLeft size={24} />
           </button>
-          <span className="text-2xl font-black bg-gradient-to-br from-[#904d00] to-[#ff8c00] bg-clip-text text-transparent italic tracking-tight">
+          <span className="text-2xl font-black bg-gradient-to-br from-[#904d00] to-[#ff8c00] bg-clip-text text-transparent tracking-tight">
             AfriBook
           </span>
         </div>
@@ -101,7 +101,7 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
           <div className="flex flex-col md:flex-row justify-between items-end gap-6">
             <div className="max-w-2xl">
               <span className="text-primary font-black tracking-widest text-[10px] uppercase mb-3 block">Exclusive Tribe Drop</span>
-              <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#1c1c15] mb-4 uppercase italic">Tech Founders Merch</h1>
+              <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#1c1c15] mb-4 uppercase">Tech Founders Merch</h1>
               <p className="text-stone-500 text-lg leading-relaxed font-medium">
                 Curated hardware and apparel for the African digital frontier. Precision engineered for the builders of tomorrow.
               </p>
@@ -151,7 +151,7 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
               </div>
               <div className="p-8 flex flex-col justify-between flex-grow">
                 <div>
-                  <h3 className={`${item.featured ? 'text-2xl' : 'text-lg'} font-black uppercase italic tracking-tight mb-2`}>
+                  <h3 className={`${item.featured ? 'text-2xl' : 'text-lg'} font-black uppercase tracking-tight mb-2`}>
                     {item.title}
                   </h3>
                   <p className="text-stone-500 text-sm font-medium mb-6">{item.desc}</p>
@@ -179,7 +179,7 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
 
         {/* Collections */}
         <section className="mt-20">
-          <h2 className="text-3xl font-black uppercase italic tracking-tight mb-8">Curated Collections</h2>
+          <h2 className="text-3xl font-black uppercase tracking-tight mb-8">Curated Collections</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {collections.map((coll, i) => (
               <div key={i} className="relative h-64 rounded-[3rem] overflow-hidden group cursor-pointer shadow-lg">
@@ -190,7 +190,7 @@ export default function TribeShopScreen({ onNavigate }: TribeShopScreenProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 text-white">
-                  <h4 className="text-2xl font-black uppercase italic tracking-tight">{coll.title}</h4>
+                  <h4 className="text-2xl font-black uppercase tracking-tight">{coll.title}</h4>
                   <p className="text-white/70 text-[10px] font-black uppercase tracking-widest">{coll.sub}</p>
                 </div>
               </div>

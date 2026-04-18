@@ -71,7 +71,7 @@ export default function ShowroomAIScreen({ onNavigate }: ShowroomAIScreenProps) 
 
             <div className="absolute bottom-8 left-8 right-8 text-white">
               <p className="text-[10px] font-black opacity-90 uppercase tracking-widest mb-1">Collection 2024</p>
-              <h1 className="text-3xl font-black leading-tight uppercase italic tracking-tight">Modern Ankara Fusion Dress</h1>
+              <h1 className="text-3xl font-black leading-tight uppercase tracking-tight">Modern Ankara Fusion Dress</h1>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function ShowroomAIScreen({ onNavigate }: ShowroomAIScreenProps) 
 
         {/* Recommendations */}
         <div className="p-6">
-          <h3 className="text-xl font-black uppercase italic tracking-tight mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-black uppercase tracking-tight mb-4 flex items-center gap-2">
             <Sparkles size={20} className="text-[#ff8c00]" />
             Stylist Recommendations
           </h3>

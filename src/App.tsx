@@ -19,8 +19,9 @@ import TribeVotingScreen from './screens/TribeVotingScreen';
 import FundraiserScreen from './screens/FundraiserScreen';
 import TribeShopScreen from './screens/TribeShopScreen';
 import ShowroomAIScreen from './screens/ShowroomAIScreen';
+import SettingsScreen from './screens/SettingsScreen';
 import { Screen } from './types';
-import { Plus } from 'lucide-react';
+import { Plus, Shield, HelpCircle } from 'lucide-react';
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState<Screen>('home');
@@ -47,6 +48,28 @@ export default function App() {
         return <TribeShopScreen onNavigate={setActiveScreen} />;
       case 'showroom-ai':
         return <ShowroomAIScreen onNavigate={setActiveScreen} />;
+      case 'settings':
+        return <SettingsScreen onNavigate={setActiveScreen} />;
+      case 'governance':
+        return (
+          <div className="flex flex-col items-center justify-center min-h-[60vh] p-8 text-center bg-slate-50">
+            <div className="size-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+              <Shield size={40} />
+            </div>
+            <h2 className="text-2xl font-black uppercase tracking-tight mb-2">Tribe Governance</h2>
+            <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px] max-w-xs leading-relaxed">View and participate in the decentralized decision making of your tribes.</p>
+          </div>
+        );
+      case 'help':
+        return (
+          <div className="flex flex-col items-center justify-center min-h-[60vh] p-8 text-center bg-slate-50">
+            <div className="size-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
+              <HelpCircle size={40} />
+            </div>
+            <h2 className="text-2xl font-black uppercase tracking-tight mb-2">Help Center</h2>
+            <p className="text-slate-500 font-bold uppercase tracking-widest text-[10px] max-w-xs leading-relaxed">Find answers to your questions and learn how to get the most out of AfriBook.</p>
+          </div>
+        );
       case 'watch':
         return <WatchScreen />;
       case 'discover':

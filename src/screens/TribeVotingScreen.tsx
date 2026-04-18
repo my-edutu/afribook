@@ -59,7 +59,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
           >
             <ArrowLeft className="text-[#904d00]" size={24} />
           </button>
-          <span className="text-2xl font-black bg-gradient-to-br from-[#904d00] to-[#ff8c00] bg-clip-text text-transparent italic">
+          <span className="text-2xl font-black bg-gradient-to-br from-[#904d00] to-[#ff8c00] bg-clip-text text-transparent">
             AfriBook
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-black text-[#1c1c15] leading-tight mb-4 tracking-tight uppercase italic">
+        <h1 className="text-3xl font-black text-[#1c1c15] leading-tight mb-4 tracking-tight uppercase">
           Lagos Tech Hub Venue Booking
         </h1>
 
@@ -158,7 +158,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
 
         {/* Proposal Description */}
         <section className="mb-16">
-          <h2 className="text-2xl font-black text-[#1c1c15] uppercase tracking-tight italic mb-6">Proposal Description</h2>
+          <h2 className="text-2xl font-black text-[#1c1c15] uppercase tracking-tight mb-6">Proposal Description</h2>
           <div className="space-y-4 text-stone-600 font-medium leading-relaxed">
             <p>This proposal seeks community approval for the strategic booking of the <strong>Lagos Tech Hub</strong> Main Auditorium for the upcoming <em>Pan-African Builders Conference</em> scheduled for October 12-14, 2024.</p>
             <p>The Lagos Tech Hub represents the heart of West African innovation. By securing this venue, AfriBook positions itself at the center of the continent's most active developer ecosystem.</p>
@@ -173,7 +173,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
         {/* Discussion Section */}
         <section className="mb-20">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-black uppercase tracking-tight italic">Discussion (12)</h2>
+            <h2 className="text-2xl font-black uppercase tracking-tight">Discussion (12)</h2>
             <button className="text-primary text-xs font-black uppercase tracking-widest flex items-center gap-1">
               Recent <ChevronDown size={14} />
             </button>
@@ -216,7 +216,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
           <div className="px-8 pt-4">
             <div className="flex justify-between items-center mb-8">
               <div>
-                <h2 className="text-2xl font-black text-[#1c1c15] uppercase tracking-tight leading-none italic">Cast Your Vote</h2>
+                <h2 className="text-2xl font-black text-[#1c1c15] uppercase tracking-tight leading-none">Cast Your Vote</h2>
                 <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest mt-1">Gas fee: ~0.002 ETH</p>
               </div>
               <div className="size-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary">
@@ -241,7 +241,7 @@ export default function TribeVotingScreen({ onNavigate }: TribeVotingScreenProps
               </button>
             </div>
 
-            <button className="w-full py-5 rounded-full bg-gradient-to-br from-[#904d00] to-[#ff8c00] text-white font-black text-lg shadow-xl shadow-orange-500/30 flex items-center justify-center gap-3 active:scale-95 transition-transform uppercase tracking-wider italic">
+            <button className="w-full py-5 rounded-full bg-gradient-to-br from-[#904d00] to-[#ff8c00] text-white font-black text-lg shadow-xl shadow-orange-500/30 flex items-center justify-center gap-3 active:scale-95 transition-transform uppercase tracking-wider">
               <Bolt size={24} fill="currentColor" />
               Confirm on Blockchain
             </button>
