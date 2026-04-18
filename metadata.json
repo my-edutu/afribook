@@ -1,0 +1,13 @@
+{
+  "name": "AfriBook",
+  "description": "Africa's Official Record Archive and Social Community Platform featuring tribes, voting, and real-time cultural documentation.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Social Networking",
+    "Digital Identity",
+    "Governance & Voting",
+    "Fintech"
+  ]
+}
