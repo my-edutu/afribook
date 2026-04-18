@@ -162,17 +162,6 @@ export default function Layout({ children, activeScreen, onScreenChange }: Layou
           ))}
         </div>
 
-        {/* Floating Action Button - Only on Home */}
-        {activeScreen === 'home' && (
-          <div className="absolute -top-20 right-4">
-            <button 
-              onClick={() => onScreenChange('claim-record')}
-              className="w-16 h-16 bg-primary rounded-full shadow-2xl shadow-primary/40 border-4 border-background-light flex items-center justify-center text-white active:scale-95 transition-all hover:scale-105"
-            >
-              <Plus size={36} strokeWidth={3} />
-            </button>
-          </div>
-        )}
       </nav>
     </div>
   );

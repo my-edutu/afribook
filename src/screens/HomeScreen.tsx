@@ -181,20 +181,6 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
 
             {/* Hub Header Removed for Dual Header Style Fix */}
 
-            {/* Search Hero Section */}
-            <section className="px-4 py-4">
-              <div className="relative group">
-                <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                  <Search className="text-slate-400" size={20} />
-                </div>
-                <input 
-                  className="w-full h-14 pl-12 pr-4 bg-white border-none ring-1 ring-slate-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-primary transition-all outline-none text-lg font-medium" 
-                  placeholder="Search Africa..." 
-                  type="text"
-                />
-              </div>
-            </section>
-
             {/* Core Modules Grid */}
             {renderModuleGrid()}
 
@@ -287,15 +273,8 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
           >
             {/* Feed Header Simplified - No redundant title/logo */}
             <header className="sticky top-0 z-30 bg-slate-50/80 backdrop-blur-md px-4 pt-4 pb-2">
-              <div className="flex items-center gap-3">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                  <input 
-                    className="w-full bg-slate-200/50 border-none rounded-2xl py-3 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary focus:bg-white transition-all font-medium" 
-                    placeholder="Search Africa..." 
-                    type="text"
-                  />
-                </div>
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-black tracking-tight text-slate-900 uppercase">Tribe Feed</h2>
                 <button 
                   onClick={() => setHasJoinedTribe(false)}
                   className="px-4 py-3 bg-white border border-slate-200 rounded-2xl text-[10px] font-black uppercase text-slate-400"

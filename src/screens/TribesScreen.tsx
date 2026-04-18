@@ -32,19 +32,7 @@ export default function TribesScreen({ onNavigate }: TribesScreenProps) {
   ];
 
   return (
-    <div className="flex flex-col pb-8">
-      {/* Search Bar */}
-      <div className="px-4 py-3">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-          <input 
-            className="w-full pl-10 pr-4 py-3 rounded-xl border-none bg-white shadow-sm focus:ring-2 focus:ring-primary text-sm" 
-            placeholder="Search candidates or proposals" 
-            type="text"
-          />
-        </div>
-      </div>
-
+    <div className="flex flex-col pb-8 pt-4">
       {/* Stats Overview */}
       <section className="px-4 overflow-x-auto no-scrollbar">
         <div className="flex gap-3 py-2 min-w-max">
@@ -290,6 +278,16 @@ export default function TribesScreen({ onNavigate }: TribesScreenProps) {
           </div>
         </div>
       </section>
+      
+      {/* Floating Action Button */}
+      <div className="fixed bottom-28 right-6 z-30">
+        <button 
+          onClick={() => onNavigate('create-tribe')}
+          className="w-16 h-16 bg-primary rounded-full shadow-2xl shadow-primary/40 border-4 border-white flex items-center justify-center text-white active:scale-95 transition-all hover:scale-105"
+        >
+          <Plus size={36} strokeWidth={3} />
+        </button>
+      </div>
     </div>
   );
 }

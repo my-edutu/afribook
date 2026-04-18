@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { 
-  Search, 
   Bell, 
   MapPin, 
   Heart, 
@@ -38,9 +37,6 @@ export default function WatchScreen() {
             <h2 className="text-xl font-bold tracking-tight">Watch Live</h2>
           </div>
           <div className="flex gap-2">
-            <button className="p-2 hover:bg-primary/10 rounded-full transition-colors">
-              <Search size={20} />
-            </button>
             <button className="p-2 hover:bg-primary/10 rounded-full transition-colors">
               <Bell size={20} />
             </button>

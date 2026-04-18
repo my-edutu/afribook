@@ -155,6 +155,16 @@ export default function AfriRecordScreen({ onNavigate }: HomeScreenProps) {
           ))}
         </div>
       </div>
+      
+      {/* Floating Action Button */}
+      <div className="fixed bottom-28 right-6 z-30">
+        <button 
+          onClick={() => onNavigate('claim-new-record')}
+          className="w-16 h-16 bg-primary rounded-full shadow-2xl shadow-primary/40 border-4 border-white flex items-center justify-center text-white active:scale-95 transition-all hover:scale-105"
+        >
+          <Plus size={36} strokeWidth={3} />
+        </button>
+      </div>
     </div>
   );
 }
